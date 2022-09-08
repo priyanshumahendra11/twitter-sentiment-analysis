@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/65f6b35058.js" crossorigin="anonymous"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+    <link rel="stylesheet" href="project.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Poppins:wght@100&display=swap');
+*{
+    font-family: 'Nunito', sans-serif; ;
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    letter-spacing: 2px;
+}
+.main{
+    width: 100vw;
+    height: auto;
+}
+.intro{
+    height: 100vh;
+    display: flex;
+    background-image: linear-gradient(30deg, rgb(193, 71, 71),rgb(251, 246, 246));
+    align-items: center;
+    justify-content: space-around;
+}
+.heading{
+    color: white;
+    margin-bottom: 40px;
+}
+.heading h1{
+    font-size: 50px;
+    margin: 0;
+    padding: 0;
+}
+.heading .content{
+    margin-top: 10px;
+    font-size: 20px;
+}
+.input{
+    color: white;
+
+}
+.input .input-text{
+    padding: 5px 13px;
+}
+form{
+    display: flex;
+    align-items: center;
+    outline: 2px solid black;
+    /* justify-content: space-around; */
+    background-color: white;
+    border: 1px solid  rgb(240, 228, 228);
+    border-radius: 10px;
+}
+form{
+    display: flex;
+    justify-content: space-around;
+}
+.input input{
+    width: 80%;
+    padding: 4px 8px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    outline: none;
+}
+.result{
+    margin-top: 10px;
+    display: flex;
+}
+div.logo{
+    display: flex;
+}
+.cancel, .search{
+    margin: 4px;
+    padding: 4px 2px;
+    z-index: 100;
+    color: black;
+    border: none;
+    background-color: transparent;
+}
+.cancel{
+    font-size: 19px;
+}
+
+.icons{
+    margin-top: 50px;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.twitter,.type{
+    width: 30%;
+    margin: 0px 20px 20px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.type-your-own,.import{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.twitter i, .type i{
+    box-sizing: border-box;
+    cursor: pointer;
+    padding: 15px;
+    font-size: 55px;
+    margin-bottom: 10px;
+    color: rgb(38, 87, 154);
+}
+
+.twitter i:hover, .type i:hover{
+    border-radius: 100%;
+    /* background-color: rgb(38, 87, 154); */
+    /* color: white; */
+    border: 2px solid rgb(38, 87, 154);
+}
+
+.about{
+    margin: 50px;
+    margin-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.img{
+    display: flex;
+    margin: 20px;
+    margin-bottom: 0px;
+}
+.vaibhav,.priyanshu{
+    margin: 50px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.developer{
+    height: 450px;
+    width: auto;
+}
+
+div.copyright{
+    color: white;
+    background-color: rgb(0, 0, 0);
+    padding: 15px;
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="intro">
+            <div class="intro-main">
+                <div class="heading">
+                    <h1>Sentiment Analysis</h1>
+                    <div class="content">Categorizes tweet under Positive, Neutral, Negative or Neutral</div>
+                </div>
+                <div class="input">  
+                    <div class="result">Prediction is :&nbsp;<h4>{{predict}}</h4></div>
+                </div>
+            </div>
+            <div class="image">
+                {% load static %}
+                <img src="{% static 'twitter.png' %}" alt="My image">
+            </div>
+        </div>
+        <div class="icons">
+            <div class="twitter">
+                <div class="import"><i class="fa-solid fa-cloud-arrow-down"></i>
+                <h2>Import Live Tweets </h2></div>
+                <div class="twitter-content">You can import live tweets by using target's twitter handle or hashtag and perform emotion Analysis</div>
+            </div>
+            <div class="type">
+                <div class="type-your-own">
+                    <i class="fa-regular fa-keyboard"></i>
+                    <h2>Type Your Own Tweet</h2>
+                </div>
+                
+                <div class="type-content">You can enter your own tweet in raw format and perform Sentiment analysis</div>
+            </div>
+        </div>
+        <div class="about">
+            <h1>Developers</h1>
+            <div class="img">
+                <div class="vaibhav">
+                    <img src="{% static 'vaibhav.jpeg' %}" alt="Image Not found" class="developer">
+                    <h2>Vaibhav Gupta</h2>
+                </div>
+                <div class="priyanshu">
+                    <img src="{% static 'priyanshu.jpeg' %}" alt="Image Not found" class="developer">
+                    <h2>Priyanshu Mahendra</h2>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <h3>Copyright &#169; 2022 Sentiment Analysis. All Rights Reserved </h3>
+        </div>
+    </div>
+</body>
+</html>
